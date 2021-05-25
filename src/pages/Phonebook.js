@@ -202,6 +202,7 @@ const Phonebook = () => {
                             {contact.map(each_contact => (
                                 <Contact
                                     key={each_contact.id}
+                                    id={each_contact.id}
                                     firstName={each_contact.firstName}
                                     lastName={each_contact.lastName}
                                     address={each_contact.address}

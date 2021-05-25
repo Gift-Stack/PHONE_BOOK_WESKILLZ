@@ -30,7 +30,6 @@ const UserState = ({ children }) => {
         setLoading();
         const res = await authAxios.get(`${apiURL}/auth/me`);
         dispatch({ type: LOAD_USER, payload: res.data });
-        console.log(res.data);
     };
 
     // LOGIN

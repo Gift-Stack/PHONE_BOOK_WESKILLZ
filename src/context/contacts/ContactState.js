@@ -34,8 +34,6 @@ const ContactState = ({ children }) => {
                 type: CREATE_CONTACT,
                 payload: res.data,
             });
-
-            console.log(res.data);
         } catch (err) {
             console.log(err.message);
         }
