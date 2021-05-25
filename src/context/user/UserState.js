@@ -30,7 +30,12 @@ const UserState = ({ children }) => {
     // LOAD_USER
     const loadUser = async () => {
         setLoading();
-        const res = await authAxios.get(`${apiURL}/auth/me`);
+        const config = {
+            headers: {
+                Authorization: `Bearer ${localStorage.token}`,
+            },
+        };
+        const res = await axios.get(`${apiURL}/auth/me`, config);
         dispatch({ type: LOAD_USER, payload: res.data });
     };
 
