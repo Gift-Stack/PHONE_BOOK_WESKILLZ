@@ -20,22 +20,18 @@ const Contact = ({ id, firstName, lastName, address, phoneNumber }) => {
                 {lastName.charAt(0).toUpperCase() + lastName.substring(1)}
             </td>
             <td className='py-2'>{phoneNumber}</td>
-            <td className='py-2 truncate'>{address}</td>
+            <td className='py-2 d-inline-block truncate'>{address}</td>
             <td className='py-2 '>
                 {showIcons && (
                     <div>
-                        <HiOutlinePencil
-                            className='update'
-                            data-toggle='edit-modal'
-                            data-target={`#${id}1`}
-                        />
-                        _ <VscTrash />
+                        <HiOutlinePencil className='update' />
+                        <VscTrash />
                     </div>
                 )}
             </td>
 
             {/* Edit Modal Starts */}
-
+            {/* 
             <div
                 className='modal fade'
                 id={`#${id}1`}
@@ -111,7 +107,7 @@ const Contact = ({ id, firstName, lastName, address, phoneNumber }) => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Edit Modal Ends */}
 
@@ -158,12 +154,12 @@ const Contact = ({ id, firstName, lastName, address, phoneNumber }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='modal-header py-1'>
+                        <div className='modal-header py-1 px-5'>
                             <h5
                                 className='modal-title'
                                 id='exampleModalLongTitle'
                             >
-                                <span className='label '>
+                                <span className='label'>
                                     {firstName.charAt(0).toUpperCase()}
                                 </span>{' '}
                                 {firstName.charAt(0).toUpperCase() +
@@ -172,7 +168,7 @@ const Contact = ({ id, firstName, lastName, address, phoneNumber }) => {
                                     lastName.substring(1)}
                             </h5>
                         </div>
-                        <div className='modal-body'>
+                        <div className='modal-body px-5'>
                             <p>Phone: {phoneNumber} </p>
                             <p>Email address: {address} </p>
                         </div>
