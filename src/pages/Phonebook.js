@@ -9,7 +9,7 @@ import Contact from '../components/Contact';
 
 const Phonebook = () => {
     const userContext = useContext(UserContext);
-    const { loadUser, loading, user } = userContext;
+    const { loadUser, loading, user, isAuthenticated } = userContext;
     const contactContext = useContext(ContactContext);
 
     const { addContact } = contactContext;
@@ -19,16 +19,18 @@ const Phonebook = () => {
     useEffect(() => {
         loadUser();
 
-        firebase
-            .firestore()
-            .collection('Contact')
-            .onSnapshot(snapshot => {
-                const newContact = snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data(),
-                }));
-                setContact(newContact);
-            });
+        if (isAuthenticated) {
+            firebase
+                .firestore()
+                .collection('Contact')
+                .onSnapshot(snapshot => {
+                    const newContact = snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        ...doc.data(),
+                    }));
+                    setContact(newContact);
+                });
+        }
 
         // eslint-disable-next-line
     }, []);

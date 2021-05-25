@@ -1,4 +1,11 @@
-import { LOGIN, LOADING, LOGIN_FAIL, LOGOUT, LOAD_USER } from '../types';
+import {
+    LOGIN,
+    LOADING,
+    LOGIN_FAIL,
+    LOGOUT,
+    LOAD_USER,
+    LOAD_USER_FAILED,
+} from '../types';
 
 export default (state, action) => {
     switch (action.type) {
@@ -21,6 +28,7 @@ export default (state, action) => {
             };
         case LOGIN_FAIL:
         case LOGOUT:
+        case LOAD_USER_FAILED:
             localStorage.removeItem('token');
             return {
                 ...state,

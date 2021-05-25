@@ -52,7 +52,7 @@ const UserState = ({ children }) => {
                 payload: res.data,
             });
 
-            // loadUser();
+            loadUser();
         } catch (err) {
             console.log(err);
             dispatch({ type: LOGIN_FAIL });
