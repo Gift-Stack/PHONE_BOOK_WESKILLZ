@@ -166,9 +166,7 @@ const Phonebook = () => {
                                 </div>
                                 <button
                                     className='btn btn-block btn-success text-white mb-3'
-                                    data-dismiss={
-                                        contactCreateStatus === true && 'modal'
-                                    }
+                                    data-dismiss='modal'
                                     onClick={createContact}
                                 >
                                     Create
