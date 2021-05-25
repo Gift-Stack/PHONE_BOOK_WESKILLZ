@@ -18,7 +18,6 @@ const Phonebook = () => {
 
     useEffect(() => {
         loadUser();
-
         if (isAuthenticated) {
             firebase
                 .firestore()

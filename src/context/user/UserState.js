@@ -16,7 +16,9 @@ const UserState = ({ children }) => {
     const apiURL = 'https://we-skillz-phonebook-task.herokuapp.com/api/v1';
 
     useEffect(() => {
-        loadUser();
+        if (localStorage.token) {
+            loadUser();
+        }
         // eslint-disable-next-line
     }, []);
 
